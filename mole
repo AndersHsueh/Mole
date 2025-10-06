@@ -124,16 +124,16 @@ show_help() {
     show_brand_banner
     echo
     printf "%s%s%s\n" "$BLUE" "COMMANDS" "$NC"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo" "$NC" "Interactive main menu"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo clean" "$NC" "Deeper system cleanup"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo clean --dry-run" "$NC" "Preview cleanup (no deletions)"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo clean --whitelist" "$NC" "Manage protected caches"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo uninstall" "$NC" "Remove applications completely"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo analyze" "$NC" "Interactive disk space explorer"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo update" "$NC" "Update Mole to the latest version"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo remove" "$NC" "Remove Mole from the system"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo --version" "$NC" "Show installed version"
-    printf "  %s%-28s%s %s\n" "$GREEN" "mo --help" "$NC" "Show this help message"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo" "$NC" "交互式菜单"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo clean" "$NC" "深度系统清理"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo clean --dry-run" "$NC" "预览清理（不删除文件）"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo clean --whitelist" "$NC" "管理受保护的缓存"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo uninstall" "$NC" "完全移除应用程序"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo analyze" "$NC" "交互式磁盘空间浏览器"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo update" "$NC" "更新 Mole 到最新版本"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo remove" "$NC" "从系统中移除 Mole"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo --version" "$NC" "显示安装版本"
+    printf "  %s%-28s%s %s\n" "$GREEN" "mo --help" "$NC" "显示此帮助信息"
 
     printf "\n%s%s%s\n" "$BLUE" "MORE" "$NC"
     printf "  https://github.com/tw93/mole\n\n"
@@ -380,15 +380,15 @@ show_main_menu() {
         printf '\033[u\033[0J'
     fi
 
-    show_menu_option 1 "Clean Mac - Remove junk files and optimize" "$([[ $selected -eq 1 ]] && echo true || echo false)"
-    show_menu_option 2 "Uninstall Apps - Remove applications completely" "$([[ $selected -eq 2 ]] && echo true || echo false)"
-    show_menu_option 3 "Analyze Disk - Interactive space explorer" "$([[ $selected -eq 3 ]] && echo true || echo false)"
-    show_menu_option 4 "Help & Information - Usage guide and tips" "$([[ $selected -eq 4 ]] && echo true || echo false)"
-    show_menu_option 5 "Exit - Close Mole" "$([[ $selected -eq 5 ]] && echo true || echo false)"
+    show_menu_option 1 "清理 Mac - 清除垃圾文件并优化" "$([[ $selected -eq 1 ]] && echo true || echo false)"
+    show_menu_option 2 "卸载应用 - 完全移除应用程序" "$([[ $selected -eq 2 ]] && echo true || echo false)"
+    show_menu_option 3 "分析磁盘 - 交互式空间浏览器" "$([[ $selected -eq 3 ]] && echo true || echo false)"
+    show_menu_option 4 "帮助与信息 - 使用指南和技巧" "$([[ $selected -eq 4 ]] && echo true || echo false)"
+    show_menu_option 5 "退出 - 关闭 Mole" "$([[ $selected -eq 5 ]] && echo true || echo false)"
 
     if [[ -t 0 ]]; then
         echo ""
-        echo -e "  ${GRAY}↑/↓${NC} Navigate  ${GRAY}|${NC}  ${GRAY}Enter${NC} Select  ${GRAY}|${NC}  ${GRAY}Q/ESC${NC} Quit"
+        echo -e "  ${GRAY}↑/↓${NC} 导航  ${GRAY}|${NC}  ${GRAY}Enter${NC} 选择  ${GRAY}|${NC}  ${GRAY}Q/ESC${NC} 退出"
     fi
 }
 
